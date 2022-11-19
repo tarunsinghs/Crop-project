@@ -3,6 +3,11 @@
 button.small{
 }
 
+
+table, th, td {
+   border: 1px solid black;
+}
+
 .nav_btn{
 	text-align: center;
 	font-size: 1.5em;

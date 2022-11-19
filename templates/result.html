@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<h2>CROP PREDICTION</h2>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b></b></p>
+	<center style="result">
+		<table>
+            <tr>
+                <th>POTASSIUM</th>
+                <th>NITROGEN</th>
+                <th>PHOSPHOROUS</th>
+                <th>PH</th>
+                <th>TEMPRATURE</th>
+            </tr>
+            <tr>
+                <td>{{output.input.potassium}}</td>
+                <td>{{output.input.nitrogen}}</td>
+                <td>{{output.input.phosporous}}</td>
+                <td>{{output.input.ph}}</td>
+                <td>{{output.input.temp}}</td>
+            </tr>
+		</table>
+        <br>
+        <br>
+
+        <table>
+            <tr>
+                <th>Navi Bayas</th>
+                <th>KNeibhour</th>
+                <th>Support Vector Machine</th>
+                <th>Random Forest</th>
+                <th>Decision Tree</th>
+
+    
+            </tr>
+            <tr>    
+                <td> 
+                    {% for col in output.nvb %}
+                        {{col}}
+                        <br>
+                    {% endfor %}
+                </td>
+                <td> 
+                    {% for col in output.knn %}
+                        {{col}}
+                        <br>
+                    {% endfor %}
+                </td>
+                <td> 
+                    {% for col in output.svm %}
+                        {{col}}
+                        <br>
+                    {% endfor %}
+                </td>
+                <td> 
+                    {% for col in output.rf %}
+                        {{col}}
+                        <br>
+                    {% endfor %}
+                </td>
+                <td> 
+                    {% for col in output.dt %}
+                        {{col}}
+                        <br>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+
+	</center>
+
+</body>
+</html> 
